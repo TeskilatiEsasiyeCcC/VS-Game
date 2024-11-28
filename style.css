@@ -1,0 +1,82 @@
+/* Genel stil ayarları */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1d1d1d;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Canvas görünümü */
+#gameCanvas {
+    border: 5px solid #ffffff;
+    background-color: #222;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+#gameCanvas:hover {
+    transform: scale(1.05);
+}
+
+/* Skor ve oyuncu isimlerinin stil ayarları */
+canvas {
+    position: relative;
+}
+
+/* Oyuncu isimlerinin gösterileceği alandaki stil */
+#scoreDisplay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+/* Kazanan oyuncu için mesaj */
+#gameOverMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-weight: bold;
+    color: #ffcc00;
+    text-align: center;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Basit bir buton görünümü (başlangıç veya oyun bitişi için) */
+button {
+    font-size: 20px;
+    padding: 15px 30px;
+    background-color: #ff6347;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff4500;
+}
+
+/* Animasyonlar için CSS */
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #ff6347, 0 0 10px #ff6347, 0 0 15px #ff6347, 0 0 20px #ff6347, 0 0 25px #ff6347, 0 0 30px #ff6347; }
+    50% { text-shadow: 0 0 10px #ff6347, 0 0 20px #ff6347, 0 0 30px #ff6347, 0 0 40px #ff6347, 0 0 50px #ff6347, 0 0 60px #ff6347; }
+    100% { text-shadow: 0 0 5px #ff6347, 0 0 10px #ff6347, 0 0 15px #ff6347, 0 0 20px #ff6347, 0 0 25px #ff6347, 0 0 30px #ff6347; }
+}
+
+#gameOverMessage {
+    animation: glow 1.5s ease-in-out infinite;
+}
+
